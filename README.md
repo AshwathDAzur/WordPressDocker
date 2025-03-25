@@ -46,8 +46,8 @@ docker-compose down
 | `WORDPRESS_DB_USER`   | WordPress database username          | `wordpress`               |
 | `WORDPRESS_DB_PASSWORD`| WordPress database password          | `wordpress`               |
 | `WORDPRESS_DB_NAME`   | WordPress database name              | `wordpress`               |
-| `WP_HOME`             | Public URL for WordPress site        | `http://192.168.10.152:8080` |
-| `WP_SITEURL`          | WordPress installation URL           | `http://192.168.10.152:8080` |
+| `WP_HOME`             | Public URL for WordPress site        | `http://<IP Addr>:8080` |
+| `WP_SITEURL`          | WordPress installation URL           | `http://<IP Addr>:8080` |
 
 
 ## 📦 Data Persistence
@@ -58,7 +58,7 @@ The WordPress site and MySQL database are stored in Docker volumes:
 
 ## 🔍 Troubleshooting
 1. Ensure Docker and Docker Compose are installed and running.
-2. Verify the IP address (192.168.10.152) is correct and accessible from other devices.
+2. Verify the IP address is correct and accessible from other devices.
 3. Check logs for errors:
 ```json
 docker-compose logs -f
