@@ -7,13 +7,11 @@ services:
     ports:
       - "8080:80"
     environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME', 'http://192.168.10.152:8080');
         define('WP_SITEURL', 'http://192.168.10.152:8080');
+    env_file:
+      - .env.dev
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
@@ -23,11 +21,8 @@ services:
     image: mysql:8
     container_name: wordpress_db
     restart: always
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-      MYSQL_ROOT_PASSWORD: rootpassword
+    env_file:
+      - .env.dev
     volumes:
       - db_data:/var/lib/mysql
 
