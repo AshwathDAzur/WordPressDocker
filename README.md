@@ -6,6 +6,8 @@ Easily deploy WordPress with MySQL using Docker Compose. This repository provide
 ```htm
 .
 ├── docker-compose.yml    # Docker Compose configuration
+└── .env.dev              # To store the env variables and inject it during container spins up
+└── .gitignore            # Ignores things that has sensitive information
 └── README.md             # Documentation
 ```
 
